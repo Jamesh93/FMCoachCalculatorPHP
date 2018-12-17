@@ -1,3 +1,25 @@
+
+
+
+<html>
+	<head>
+		</head>
+	<body>
+
+
+		<form action="/FMCoachCalculator/Calculator.php" method="post">
+			Determination:<input type ="text" name="determination" size="2" maxlength="2" required><br>
+			Level of Discipline:<input type ="text" name="levelOfDiscipline" size="2" maxlength="2" required><br>
+			Motivating:<input type ="text" name="motivating" size="2" maxlength="2" required><br>
+			Fitness:<input type ="text" name="fitness" size="2" maxlength="2" required><br>
+			Goalkeeping:<input type ="text" name="goalkeeping"size="2" maxlength="2"  required><br>
+			Attacking:<input type ="text" name="attacking" size="2" maxlength="2" required><br>
+			Defending:<input type ="text" name="defending" size="2" maxlength="2" required><br>
+			Tactical:<input type ="text" name="tactical"size="2" maxlength="2"  required><br>
+			Technical:<input type ="text" name="technical" size="2" maxlength="2" required><br>
+			Mental:<input type ="text" name="mental"size="2" maxlength="2"  required><br>
+		<input type="submit" name="submit" value="Submit">
+		</form>
 <?php
 
 
@@ -14,11 +36,7 @@ if (isset($_POST['submit']))
 	$attacking = $_POST['attacking'];
 	$defending = $_POST['defending'];
 
-} 
 
-	//echo $levelOfDiscipline;
-	//echo $determination;
-	//echo $motivating;
 $fitnessvalue = ($fitness * 9) + (($determination + $levelOfDiscipline + $motivating) *2);
 $keepingvalue = ($goalkeeping * 8) + ($tactical * 3) + (($determination + $levelOfDiscipline + $motivating) * 2);
 $attackingvalue = ($attacking * 6) + ($tactical * 3) + (($determination + $levelOfDiscipline + $motivating)*2);
@@ -26,6 +44,8 @@ $techniquevalue = ($technical * 6) + ($mental * 3) + (($determination + $levelOf
 $defendingvalue = ($defending * 8) + ($tactical * 3) + (($determination + $levelOfDiscipline + $motivating) * 3);
 $shootingvalue = ($technical * 6) + ($attacking * 3) + (($determination + $levelOfDiscipline + $motivating)*2);
 $tacticsvalue = ($tactical * 2) + ($determination + $levelOfDiscipline + $motivating);
+
+
 
 
 	$fitStars = "";
@@ -185,34 +205,6 @@ $tacticsvalue = ($tactical * 2) + ($determination + $levelOfDiscipline + $motiva
 	} else if ($tacticsvalue >=90) {
 		$tactStars = 5;
 	}
-
-?>
-
-
-<html>
-	<head>
-		</head>
-	<body>
-
-
-		<form action="/FMCoachCalculator/Calculator.php" method="post">
-			Determination:<input type ="text" name="determination" size="2" maxlength="2" required><br>
-			Level of Discipline:<input type ="text" name="levelOfDiscipline" size="2" maxlength="2" required><br>
-			Motivating:<input type ="text" name="motivating" size="2" maxlength="2" required><br>
-			Fitness:<input type ="text" name="fitness" size="2" maxlength="2" required><br>
-			Goalkeeping:<input type ="text" name="goalkeeping"size="2" maxlength="2"  required><br>
-			Attacking:<input type ="text" name="attacking" size="2" maxlength="2" required><br>
-			Defending:<input type ="text" name="defending" size="2" maxlength="2" required><br>
-			Tactical:<input type ="text" name="tactical"size="2" maxlength="2"  required><br>
-			Technical:<input type ="text" name="technical" size="2" maxlength="2" required><br>
-			Mental:<input type ="text" name="mental"size="2" maxlength="2"  required><br>
-		<input type="submit" name="submit" value="Submit">
-		</form>
-
-	</body>
-</html>
-
-<?php 
 	echo "Fitness: $fitStars </br>";
 	echo "Goalkeeping: $keepStars </br>";
 	echo "Attacking: $attackStars </br>";
@@ -220,4 +212,9 @@ $tacticsvalue = ($tactical * 2) + ($determination + $levelOfDiscipline + $motiva
 	echo "Defending: $defStars </br>";
 	echo "Shooting: $shootStars </br>";
 	echo "Tactics: $tactStars</br>";
-	?>
+
+}
+?>
+	</body>
+</html>
+
